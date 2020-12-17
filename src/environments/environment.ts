@@ -4,6 +4,7 @@
 
 export const environment = {
   production: false,
+  apiUrl: 'http://localhost:5001/wedding-wix-tutorial/us-central1/api',
   firebase: {
     apiKey: "AIzaSyDocqAuUI01V7vxaBv9SRvJdQyTq2tCQ2M",
     authDomain: "wedding-wix-tutorial.firebaseapp.com",
