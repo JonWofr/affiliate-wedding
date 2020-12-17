@@ -1,0 +1,20 @@
+:host {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  background-color: #ff5757;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.triangle-bottomleft {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 100vh 0 0 100vw;
+  border-color: transparent transparent transparent #b63a3a;
+  opacity: 0;
+}

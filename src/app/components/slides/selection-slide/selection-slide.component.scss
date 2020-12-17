@@ -1,0 +1,43 @@
+.container {
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.section-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  img.number {
+    max-width: 7rem;
+    margin-bottom: 2rem;
+  }
+
+  margin: 5rem;
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+h3,
+h4 {
+  font-family: m-reg;
+  text-align: center;
+  color: #edf2f4;
+}
+
+h3 {
+  font-size: 3.5rem;
+}
+
+h4 {
+  font-size: 1.7rem;
+  margin-bottom: 3rem;
+}
