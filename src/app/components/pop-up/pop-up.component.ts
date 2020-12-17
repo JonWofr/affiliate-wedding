@@ -6,7 +6,7 @@ enum HttpRequestStatus {
   UNSENT = 'unsent',
   SENT = 'sent',
   SUCCESS = 'success',
-  ERROR = 'error'
+  ERROR = 'error',
 }
 
 @Component({
@@ -19,7 +19,7 @@ export class PopUpComponent implements OnInit {
 
   email = '';
   isInterestedInNewsletter = false;
-  HttpRequestStatus = HttpRequestStatus
+  HttpRequestStatus = HttpRequestStatus;
   httpRequestStatus = HttpRequestStatus.UNSENT;
 
   constructor(private httpClient: HttpClient) {}
@@ -36,20 +36,23 @@ export class PopUpComponent implements OnInit {
 
   onSubmit(event) {
     event.preventDefault();
-    this.httpRequestStatus = HttpRequestStatus.SENT
-    this.httpClient.get(
-      `${environment.apiUrl}/mails/send-mail?email=${this.email}&isInterestedInNewsletter=${this.isInterestedInNewsletter}`
-    ).toPromise()
-    .then(res => {
-      this.httpRequestStatus = HttpRequestStatus.SUCCESS
-    })
-    .catch(res => {
-      this.httpRequestStatus = HttpRequestStatus.ERROR
-    })
-    .finally(() => {
-      setTimeout(() => {
-        this.dismiss.emit();
-      }, 2000)
-    })
+    this.httpRequestStatus = HttpRequestStatus.SENT;
+    this.httpClient
+      .post(`${environment.apiUrl}/mails/send-mail`, {
+        email: this.email,
+        isInterestedInNewsletter: this.isInterestedInNewsletter,
+      })
+      .toPromise()
+      .then((res) => {
+        this.httpRequestStatus = HttpRequestStatus.SUCCESS;
+      })
+      .catch(() => {
+        this.httpRequestStatus = HttpRequestStatus.ERROR;
+      })
+      .finally(() => {
+        setTimeout(() => {
+          this.dismiss.emit();
+        }, 2000);
+      });
   }
 }

@@ -18,4 +18,8 @@ export class SelectionSlideComponent implements OnInit {
     this.showSiteEvent.emit(value);
   }
 
+  onClickCheckOutWixButton() {
+    window.open('https://wix.com')
+  }
+
 }

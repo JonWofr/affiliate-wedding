@@ -8,7 +8,7 @@
     "start": "npm run shell",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log",
-    "dev": "nodemon -e ts --exec npm run serve"
+    "dev": "set GOOGLE_APPLICATION_CREDENTIALS=wedding-wix-tutorial-firebase-adminsdk-k9n7n-80a3fbb799.json&& nodemon -e ts --exec npm run serve"
   },
   "engines": {
     "node": "10"
